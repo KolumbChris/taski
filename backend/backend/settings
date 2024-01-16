@@ -1,0 +1,14 @@
+import sentry_sdk
+from sentry_sdk.integrations.django import DjangoIntegration
+
+# Скопируйте DSN из вашего личного кабинета на Sentry: 
+# Settings → Projects → <ваш-проект> → Client Keys (DSN).
+sentry_sdk.init(
+    # В этой переменной будет значение для вашего проекта.
+    dsn="https://1a1ff867b4c7ff9a87cc98f93ec26af0@o4506580611760128.ingest.sentry.io/4506580625195008",
+    integrations=[
+        DjangoIntegration(),
+    ],
+    traces_sample_rate=1.0,
+    send_default_pii=True
+)
